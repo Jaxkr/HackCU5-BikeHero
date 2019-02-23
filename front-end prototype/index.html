@@ -52,11 +52,14 @@
                 mapboxgl.accessToken = 'pk.eyJ1IjoiamF4a3IiLCJhIjoiY2pzaHpmcTB2MDg2aDQ0cm9mMTBxbG94NiJ9.Z3MA4WN6-59v2KTPsp6R0Q';
                 var map = new mapboxgl.Map({
                     container: 'map',
-                    style: 'mapbox://styles/mapbox/streets-v11'
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [-105.279617, 40.016869],
+                    zoom: 15,
                 });
             </script>
         </div>
-        <button class="startridebox btn btn-success btn-lg btn-block startridebutton">Start ride</button>
+        <!-- <button class="startridebox btn btn-success btn-lg btn-block startridebutton">Start ride</button> -->
+        <button class="startridebox btn btn-snapchat btn-lg btn-block startridebutton"><i class="fab fa-snapchat-square"></i> Sign in with Snapchat</button>
     </div>
 
     <script src="/js/jquery.min.js"></script>

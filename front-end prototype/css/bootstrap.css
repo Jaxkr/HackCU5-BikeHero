@@ -2561,6 +2561,12 @@ fieldset:disabled a.btn {
   border-color: #ffc107;
 }
 
+.btn-snapchat {
+  color: #212529;
+  background-color: #FFFC00;
+  border-color: #FFFC00;
+}
+
 .btn-warning:hover {
   color: #212529;
   background-color: #e0a800;
