@@ -13,6 +13,7 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 
+
 </head>
 
 <body>
@@ -45,9 +46,9 @@
     </nav>
 
     <div id="ride-content">
-        
+
         <div class="mapbg">
-            <div id='map' style='width: 375px; height: 800px;'></div>
+            <div id='map' style='width: 100%; height: 100vh;'></div>
             <script>
                 mapboxgl.accessToken = 'pk.eyJ1IjoiamF4a3IiLCJhIjoiY2pzaHpmcTB2MDg2aDQ0cm9mMTBxbG94NiJ9.Z3MA4WN6-59v2KTPsp6R0Q';
                 var map = new mapboxgl.Map({
@@ -58,9 +59,14 @@
                 });
             </script>
         </div>
-        <!-- <button class="startridebox btn btn-success btn-lg btn-block startridebutton">Start ride</button> -->
-        <button class="startridebox btn btn-snapchat btn-lg btn-block startridebutton"><i class="fab fa-snapchat-square"></i> Sign in with Snapchat</button>
-        <button class="startridebox btn btn-primary btn-lg btn-block startridebutton">Parent? Set up kid account</button>
+        <div class="buttonbox">
+
+            <!-- <button class="startridebox btn btn-success btn-lg btn-block startridebutton">Start ride</button> -->
+            <button class="startridebox btn btn-snapchat btn-lg btn-block startridebutton"><i
+                    class="fab fa-snapchat-square"></i> Sign in with Snapchat</button>
+            <button class="startridebox btn btn-primary btn-lg btn-block startridebutton">Parent? Set up kid
+                account</button>
+        </div>
 
     </div>
 
