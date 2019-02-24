@@ -75,10 +75,11 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script>
 
+
         $(document).ready(function () {
             console.log(window.location.href);
         });
-        /*
+        
         var hint_y = 60;
         var hint_delta = .1;
         
@@ -98,7 +99,7 @@
             clearInterval(animatehint);
             $('#bitmoji-hint').fadeOut();
         });
-        */
+        
 
         var user_data;
 
@@ -111,6 +112,7 @@
             } else {
                 $('#bitmoji').attr('src', '/images/greyboy.png');
                 $('#bitmoji-container').fadeIn();
+
             }
         }
 
