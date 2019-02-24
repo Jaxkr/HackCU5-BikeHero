@@ -13,7 +13,6 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 
-
 </head>
 
 <body>
@@ -21,7 +20,7 @@
 
     <nav style="font-size: 20px;" class="navbar navbar-expand-lg navbar-light bg-trans">
         <a class="navbar-brand" href="#"></a>
-        
+
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -65,18 +64,17 @@
 
             <!-- <button class="startridebox btn btn-success btn-lg btn-block startridebutton">Start ride</button> -->
             <div id="my-login-button-target"></div>
-            <button class="startridebox btn btn-primary btn-lg btn-block startridebutton snapchat-curve">Parent? Set up kid
-                account</button>
+            <button class="startridebox btn btn-primary btn-lg btn-block startridebutton snapchat-curve">Parent? Set up
+                kid gaccount</button>
         </div>
 
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script>
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             console.log(window.location.href);
         });
         /*
@@ -121,7 +119,7 @@
             // Mount Login Button
             snap.loginkit.mountButton(loginButtonIconId, {
                 clientId: '094eabf7-2f4f-45d8-98d4-ebad958e321e',
-                redirectURI: 'http://localhost:8000/',
+                redirectURI: 'http://10.235.144.220:8000/',
                 scopeList: [
                     'user.display_name',
                     'user.bitmoji.avatar',
