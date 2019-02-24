@@ -156,7 +156,7 @@
         function simulateFinishRide() {
             var d = new Date();
             var message = user_data['data']['me']['displayName'] + ' arrived safely at school at ' + d.toLocaleTimeString();
-            $.post('http://localhost:8000/notify', data={"content": message});
+            $.post('http://localhost:8000/notify', data='{"content": ' + message + '}');
         }
 
         $('#startrideb').click(function () {

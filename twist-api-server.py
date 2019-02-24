@@ -10,7 +10,7 @@ class NotifyParents(object):
 
         r = requests.post(url, json= {"content": request_data['content']})
         print(r)
-
+        resp.set_header('Access-Control-Allow-Origin', '*')
         resp.body = 'hi'
 
 
