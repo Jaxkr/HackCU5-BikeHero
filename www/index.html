@@ -76,6 +76,11 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script>
 
+        $('#startrideb').click(function() {
+            $(this).attr("disabled", true);
+            $(this).html('<i class="fas fa-bicycle"></i> Riding...')
+        });
+
 
         $(document).ready(function () {
             console.log(window.location.href);
