@@ -42,11 +42,12 @@
                 </li>
             </ul>
         </div>
-    </nav> 
+    </nav>
 
     <div id="ride-content">
         <div id="bitmoji-container">
-            <a class="navbar-toggle" style="width: 100%; height: 100%" data-toggle="collapse" data-target="#navbarNav"><img href="" id="bitmoji"></a>
+            <a class="navbar-toggle" style="width: 100%; height: 100%" data-toggle="collapse"
+                data-target="#navbarNav"><img href="" id="bitmoji"></a>
         </div>
 
         <div class="mapbg">
@@ -79,27 +80,18 @@
         $(document).ready(function () {
             console.log(window.location.href);
         });
-        
+
         var hint_y = 60;
         var hint_delta = .1;
-        
-        var animatehint = setInterval(function() {
-            $('#bitmoji-hint').css('top', hint_y);
-            hint_y += hint_delta;
-            if (hint_y < 60) {
-                hint_delta = .1;
-            }
-            if (hint_y > 75) {
-                hint_delta = -.1;
-            }
-        }, 10);
+
+        var animatehint;
 
 
-        $('#bitmoji-container').click(function() {
+        $('#bitmoji-container').click(function () {
             clearInterval(animatehint);
             $('#bitmoji-hint').fadeOut();
         });
-        
+
 
         var user_data;
 
@@ -114,6 +106,18 @@
                 $('#bitmoji-container').fadeIn();
 
             }
+
+            animatehint = setInterval(function () {
+                $('#bitmoji-hint').css('top', hint_y);
+                hint_y += hint_delta;
+                if (hint_y < 60) {
+                    hint_delta = .1;
+                }
+                if (hint_y > 75) {
+                    hint_delta = -.1;
+                }
+            }, 10);
+            $('#bitmoji-hint').fadeIn();
         }
 
 
