@@ -63,10 +63,23 @@
             </script>
         </div>
         <div class="buttonbox">
+            <div
+                id="rideinprogress" style="background-color: white; margin-left: auto; margin-right: auto; border-radius: 50px; width: 75%; margin-bottom: 15px; padding: 25px;">
+                <b>Start</b>: SEEC Building<br>
+                <b>Finish</b>: 1310 College Ave<br><br>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        style="width: 30%"></div>
+                </div>
+            </div>
 
-            <button style="display: none" id="startrideb" class="startridebox btn btn-success btn-lg btn-block startridebutton snapchat-curve"><i class="fas fa-bicycle"></i> Start ride</button>
+            <button style="display: none" id="startrideb"
+                class="startridebox btn btn-success btn-lg btn-block startridebutton snapchat-curve"><i
+                    class="fas fa-bicycle"></i> Start ride</button>
+            
             <div id="my-login-button-target"></div>
-            <button id="parentbutton" class="startridebox btn btn-primary btn-lg btn-block startridebutton snapchat-curve">Parent? Set up
+            <button id="parentbutton"
+                class="startridebox btn btn-primary btn-lg btn-block startridebutton snapchat-curve">Parent? Set up
                 kid account</button>
         </div>
 
@@ -76,9 +89,10 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script>
 
-        $('#startrideb').click(function() {
+        $('#startrideb').click(function () {
             $(this).attr("disabled", true);
             $(this).html('<i class="fas fa-bicycle"></i> Riding...')
+            $('#rideinprogress').fadeIn();
         });
 
 
