@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>
-        Jubilant-garbanzo
+        BikeHero
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
@@ -29,7 +29,7 @@
                     <a class="nav-link" href="#"><i class="fas fa-bicycle"></i> Ride</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-mask"></i> My Bike Hero</a>
+                    <a id="showbikehero" class="nav-link" href="#"><i class="fas fa-mask"></i> My Bike Hero</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-map-marker-alt"></i> Destinations</a>
@@ -44,7 +44,25 @@
         </div>
     </nav>
 
-    <div id="hero-content"></div>
+    <div id="hero-content">
+        <div style="text-align:right"><button id="closehero" style="border-radius: 50px"
+                class="btn btn-primary btn-md"><i class="fas fa-times-circle"></i></button></div>
+        <div class="row">
+            <div class="col-xs-4"><img id="heroimg" style="width: 70%" src="/images/greyboy.png"></div>
+            <div class="col-xs-8">
+                <b>Sandeep</b><br>
+                <b>Level</b>: 1<br>
+                <b>Longest ride</b>: 6.5 miles
+            </div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 32%">
+            </div>
+        </div>
+        <div id="xpamt" style="text-align: center">32/100</div>
+
+    </div>
 
     <div id="ride-content">
         <div id="bitmoji-container">
@@ -124,6 +142,14 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script>
+        $('#showbikehero').click(function() {
+            $('#hero-content').fadeIn();
+        });
+        $('#closehero').click(function () {
+            $('#hero-content').fadeOut();
+        });
+    </script>
+    <script>
 
         $('#startrideb').click(function () {
             $(this).attr("disabled", true);
@@ -156,9 +182,11 @@
             console.log(user_data);
             if ("avatar" in user_data['data']['me']['bitmoji']) {
                 $('#bitmoji').attr('src', user_data['data']['me']['bitmoji']['avatar']);
+                $('#heroimg').attr('src', user_data['data']['me']['bitmoji']['avatar']);
                 $('#bitmoji-container').fadeIn();
             } else {
                 $('#bitmoji').attr('src', '/images/greyboy.png');
+                $('#heroimg').attr('src', '/images/greyboy.png');
                 $('#bitmoji-container').fadeIn();
 
             }
