@@ -60,5 +60,5 @@
 
 #bitmoji-hint {
     position: absolute; top: 60px; right: 25px; color: black; text-decoration: italic; font-size: 35px;
-    display: none;
+    /*display: none;*/
 }
