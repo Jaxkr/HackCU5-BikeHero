@@ -154,7 +154,8 @@
     <script>
 
         function simulateFinishRide() {
-            var message = user_data['data']['me']['displayName'] + ' arrived safely at school at ' + getHours() + ':' + getMinutes();
+            var d = new Date();
+            var message = user_data['data']['me']['displayName'] + ' arrived safely at school at ' + dt.toLocaleTimeString();
             $.post('http://localhost:8000/notify', data={"content": message});
         }
 
