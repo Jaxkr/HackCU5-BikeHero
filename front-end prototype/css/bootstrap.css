@@ -2493,6 +2493,12 @@ fieldset:disabled a.btn {
   border-color: #28a745;
 }
 
+.snapchat-curve {
+  border-radius: 45px !important;
+  height: 75px !important;
+  width: 286px !important;
+}
+
 .btn-success:hover {
   color: #fff;
   background-color: #218838;
@@ -4234,7 +4240,7 @@ input[type="button"].btn-block {
   line-height: 1;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: 45px;
 }
 
 .navbar-toggler:hover, .navbar-toggler:focus {
@@ -6579,6 +6585,10 @@ button.bg-danger:focus {
 
 .bg-light {
   background-color: #f8f9fa !important;
+
+}
+.bg-trans {
+  background-color: rgba(0,0,0,0);
 }
 
 a.bg-light:hover, a.bg-light:focus,

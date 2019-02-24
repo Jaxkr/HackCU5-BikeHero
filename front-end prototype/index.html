@@ -17,12 +17,11 @@
 </head>
 
 <body>
+    <div id="bitmoji-hint"><i class="fas fa-chevron-up"></i></div>
 
-    <nav style="font-size: 20px" class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">J-G</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <nav style="font-size: 20px;" class="navbar navbar-expand-lg navbar-light bg-trans">
+        <a class="navbar-brand" href="#"></a>
+        
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -46,6 +45,9 @@
     </nav>
 
     <div id="ride-content">
+        <div id="bitmoji-container">
+            <img class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarNav" id="bitmoji">
+        </div>
 
         <div class="mapbg">
             <div id='map' style='width: 100%; height: 100vh;'></div>
@@ -62,9 +64,8 @@
         <div class="buttonbox">
 
             <!-- <button class="startridebox btn btn-success btn-lg btn-block startridebutton">Start ride</button> -->
-            <button class="startridebox btn btn-snapchat btn-lg btn-block startridebutton"><i
-                    class="fab fa-snapchat-square"></i> Sign in with Snapchat</button>
-            <button class="startridebox btn btn-primary btn-lg btn-block startridebutton">Parent? Set up kid
+            <div id="my-login-button-target"></div>
+            <button class="startridebox btn btn-primary btn-lg btn-block startridebutton snapchat-curve">Parent? Set up kid
                 account</button>
         </div>
 
@@ -72,12 +73,77 @@
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script>
+        /*
+        var hint_y = 60;
+        var hint_delta = .1;
+        
+        var animatehint = setInterval(function() {
+            $('#bitmoji-hint').css('top', hint_y);
+            hint_y += hint_delta;
+            if (hint_y < 60) {
+                hint_delta = .1;
+            }
+            if (hint_y > 75) {
+                hint_delta = -.1;
+            }
+        }, 10);
+
+
+        $('#bitmoji-container').click(function() {
+            clearInterval(animatehint);
+            $('#bitmoji-hint').fadeOut();
+        });
+        */
+
+        var user_data;
+
+        function handleUserData(data) {
+            user_data = data;
+            console.log(user_data);
+            if ("avatar" in user_data['data']['me']['bitmoji']) {
+                $('#bitmoji').attr('src', user_data['data']['me']['bitmoji']['avatar']);
+                $('#bitmoji-container').fadeIn();
+            } else {
+                $('#bitmoji').attr('src', '/images/greyboy.png');
+                $('#bitmoji-container').fadeIn();
+            }
+        }
+
+
+        window.snapKitInit = function () {
+            var loginButtonIconId = 'my-login-button-target';
+            // Mount Login Button
+            snap.loginkit.mountButton(loginButtonIconId, {
+                clientId: '094eabf7-2f4f-45d8-98d4-ebad958e321e',
+                redirectURI: 'http://localhost:8000/',
+                scopeList: [
+                    'user.display_name',
+                    'user.bitmoji.avatar',
+                ],
+                handleResponseCallback: function () {
+                    snap.loginkit.fetchUserInfo()
+                        .then(data => handleUserData(data));
+                },
+            });
+        };
+
+        // Load the SDK asynchronously
+        (function (d, s, id) {
+            var js, sjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://sdk.snapkit.com/js/v1/login.js";
+            sjs.parentNode.insertBefore(js, sjs);
+        }(document, 'script', 'loginkit-sdk'));
+    </script>
 
 
 
     <script>
         var pages = ['ride', 'hero', 'destinations', 'snap', 'settings'];
         var currentPage = 0; //index in pages
+
 
 
 

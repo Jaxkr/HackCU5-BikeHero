@@ -1,12 +1,13 @@
 .startridebox {
     margin-top: 15px;
-    box-shadow: 10px 10px 36px -8px rgba(0,0,0,0.75);
     z-index: 2;
 }
 .mapbg {
     overflow: hidden;
     width: 100%;
-    z-index: 1;
+    z-index: -2;
+    position: absolute;
+    top: 0px;
 }
 
 .startridebutton {
@@ -20,4 +21,44 @@
     position: fixed;
     bottom: 20px;
     width: 100%;
+}
+
+.navbar-collapse {
+    background-color: rgb(0, 123, 255, 0.7) !important;
+    padding-left: 20px;
+    border-radius: 25px;
+    position: relative;
+    top: 10px;
+}
+
+.nav-link {
+    color: white !important;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.navbar-toggler-icon {
+    display: none !important;
+}
+
+#bitmoji-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border: 1px solid grey;
+    overflow: hidden;
+    display: none;
+}
+#bitmoji {
+    width: 100%;
+}
+
+
+#bitmoji-hint {
+    position: absolute; top: 60px; right: 25px; color: black; text-decoration: italic; font-size: 35px;
+    display: none;
 }
