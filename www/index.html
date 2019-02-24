@@ -51,7 +51,7 @@
         <div class="row">
             <div class="col-xs-4"><img id="heroimg" style="width: 70%" src="/images/greyboy.png"></div>
             <div class="col-xs-8">
-                <b>Sandeep</b><br>
+                <b id="username">Sandeep</b><br>
                 <b>Level</b>: 1<br>
                 <b>Longest ride</b>: 6.5 miles
             </div>
@@ -192,6 +192,8 @@
                 $('#bitmoji-container').fadeIn();
 
             }
+
+            $('#username').html(user_data['data']['me']['displayName']);
 
             animatehint = setInterval(function () {
                 $('#bitmoji-hint').css('top', hint_y);
