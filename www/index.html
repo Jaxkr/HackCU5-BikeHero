@@ -60,11 +60,45 @@
                     center: [-105.279617, 40.016869],
                     zoom: 15,
                 });
+                function startTrip() {
+                    map.flyTo({
+                        center: [-105.2424912, 40.0100112]
+                    });
+                    map.addLayer({
+                        "id": "points",
+                        "type": "symbol",
+                        "source": {
+                            "type": "geojson",
+                            "data": {
+                                "type": "FeatureCollection",
+                                "features": [{
+                                    "type": "Feature",
+                                    "geometry": {
+                                        "type": "Point",
+                                        "coordinates": [-105.2424912, 40.0100112]
+                                    },
+                                    "properties": {
+                                        "title": "Start",
+                                        "icon": "marker"
+                                    }
+                                }]
+                            }
+                        },
+                        "layout": {
+                            "icon-image": "{icon}-15",
+                            "text-field": "{title}",
+                            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                            "text-offset": [0, 0.6],
+                            "text-anchor": "top"
+                        }
+                    });
+                }
+
             </script>
         </div>
         <div class="buttonbox">
-            <div
-                id="rideinprogress" style="display: none; background-color: white; margin-left: auto; margin-right: auto; border-radius: 50px; width: 75%; margin-bottom: 15px; padding: 25px;">
+            <div id="rideinprogress"
+                style="display: none; background-color: white; margin-left: auto; margin-right: auto; border-radius: 50px; width: 75%; margin-bottom: 15px; padding: 25px;">
                 <b>Start</b>: SEEC Building<br>
                 <b>Finish</b>: 1310 College Ave<br><br>
                 <div class="progress">
@@ -76,7 +110,7 @@
             <button style="display: none" id="startrideb"
                 class="startridebox btn btn-success btn-lg btn-block startridebutton snapchat-curve"><i
                     class="fas fa-bicycle"></i> Start ride</button>
-            
+
             <div id="my-login-button-target"></div>
             <button id="parentbutton"
                 class="startridebox btn btn-primary btn-lg btn-block startridebutton snapchat-curve">Parent? Set up
@@ -93,6 +127,7 @@
             $(this).attr("disabled", true);
             $(this).html('<i class="fas fa-bicycle"></i> Riding...')
             $('#rideinprogress').fadeIn();
+            startTrip();
         });
 
 
